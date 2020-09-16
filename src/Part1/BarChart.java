@@ -1,3 +1,5 @@
+package Part1;
+
 import TurtleGraphics.*;
 import java.util.Scanner;
 import java.awt.Color;
