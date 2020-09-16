@@ -5,6 +5,7 @@ public class BarChart {
 
     public static void main(String[] args) {
         Pen P = new StandardPen();
+        int xloc;
         Scanner s = new Scanner(System.in);
         System.out.print("Enter bar value > ");
         xloc = s.nextInt();
