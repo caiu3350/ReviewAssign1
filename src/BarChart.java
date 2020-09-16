@@ -6,6 +6,14 @@ public class BarChart {
     public static void main(String[] args) {
         Pen P = new StandardPen();
         Scanner s = new Scanner(System.in);
+        System.out.print("Enter bar value > ");
+        xloc = s.nextInt();
+        System.out.print("Enter bar value > ");
+        xloc = s.nextInt();
+        System.out.print("Enter bar value > ");
+        xloc = s.nextInt();
+        System.out.print("Enter bar value > ");
+        xloc = s.nextInt();
         
     }
     public static void makeBar(Pen p,int xloc, int yloc, int length, Color col) {
