@@ -29,7 +29,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                      <Component id="totalLbl" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -113,7 +113,7 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalLbl" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
@@ -150,6 +150,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Reset"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetbutActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -173,12 +176,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="laborLbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="$1.50"/>
+        <Property name="text" type="java.lang.String" value="$0.00"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="utilLbL">
       <Properties>
-        <Property name="text" type="java.lang.String" value="$0.75"/>
+        <Property name="text" type="java.lang.String" value="$0.00"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="topLbl">
@@ -196,7 +199,7 @@
         <Property name="text" type="java.lang.String" value="Total"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
+    <Component class="javax.swing.JLabel" name="totalLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="$0.00"/>
       </Properties>

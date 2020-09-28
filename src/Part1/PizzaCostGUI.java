@@ -45,7 +45,7 @@ public class PizzaCostGUI extends javax.swing.JFrame {
         topLbl = new javax.swing.JLabel();
         baseLbl = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        totalLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +67,11 @@ public class PizzaCostGUI extends javax.swing.JFrame {
         });
 
         resetbut.setText("Reset");
+        resetbut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetbutActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Labour Cost (Fixed)");
 
@@ -76,9 +81,9 @@ public class PizzaCostGUI extends javax.swing.JFrame {
 
         jLabel6.setText("Base Ingredient Cost");
 
-        laborLbl.setText("$1.50");
+        laborLbl.setText("$0.00");
 
-        utilLbL.setText("$0.75");
+        utilLbL.setText("$0.00");
 
         topLbl.setText("$0.00");
 
@@ -86,7 +91,7 @@ public class PizzaCostGUI extends javax.swing.JFrame {
 
         jLabel11.setText("Total");
 
-        jLabel12.setText("$0.00");
+        totalLbl.setText("$0.00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,7 +103,7 @@ public class PizzaCostGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel12))
+                        .addComponent(totalLbl))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -163,7 +168,7 @@ public class PizzaCostGUI extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel12))
+                    .addComponent(totalLbl))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -182,14 +187,29 @@ public class PizzaCostGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Must enter a valid number");
             return;
         }
-        if (size>0||top>0) {
+        if (size<=0||top<0) {
             JOptionPane.showMessageDialog(this, "Must enter a valid number");
             return;
         }
         sizecost=size*0.50;
         topcost=top*0.75;
         total=labour+heat+sizecost+topcost;
+        laborLbl.setText(String.format("$%.2f", labour));
+        utilLbL.setText(String.format("$%.2f", heat));
+        topLbl.setText(String.format("$%.2f", topcost));
+        baseLbl.setText(String.format("$%.2f", sizecost));
+        totalLbl.setText(String.format("$%.2f", total));
     }//GEN-LAST:event_calcbutActionPerformed
+
+    private void resetbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetbutActionPerformed
+        laborLbl.setText("$0.00");
+        utilLbL.setText("$0.00");
+        topLbl.setText("$0.00");
+        baseLbl.setText("$0.00");
+        totalLbl.setText("$0.00");
+        sizebox.setText("");
+        topbox.setText("");
+    }//GEN-LAST:event_resetbutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,7 +251,6 @@ public class PizzaCostGUI extends javax.swing.JFrame {
     private javax.swing.JButton calcbut;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -242,6 +261,7 @@ public class PizzaCostGUI extends javax.swing.JFrame {
     private javax.swing.JTextField sizebox;
     private javax.swing.JLabel topLbl;
     private javax.swing.JTextField topbox;
+    private javax.swing.JLabel totalLbl;
     private javax.swing.JLabel utilLbL;
     // End of variables declaration//GEN-END:variables
 }
